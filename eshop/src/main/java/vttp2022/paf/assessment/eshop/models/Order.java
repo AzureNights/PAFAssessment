@@ -3,11 +3,12 @@ package vttp2022.paf.assessment.eshop.models;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.UUID;
 
 // DO NOT CHANGE THIS CLASS
 public class Order {
 
-	private String orderId;
+	private String orderId =  UUID.randomUUID().toString().substring(0,8);
 	private String deliveryId;
 	private String name;
 	private String address;
@@ -49,6 +50,12 @@ public class Order {
 		address = customer.getAddress();
 		email = customer.getEmail();
 	}
+
+	//public void orderedDate(String orderDate){
+
+
+
+	//}
 
 	public List<LineItem> getLineItems() { return this.lineItems; }
 	public void setLineItems(List<LineItem> lineItems) { this.lineItems = lineItems; }
